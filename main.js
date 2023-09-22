@@ -17,5 +17,5 @@ async function returnWeather() {
 }
 
 returnWeather().then(() => {
-    console.log(weatherData); // Log weatherData after the fetch operation is complete
+    usableData = weatherData; // Log weatherData after the fetch operation is complete
 });
