@@ -7,7 +7,7 @@ async function returnWeather() {
             throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         return data
     } catch (error) {
         console.error('Error fetching weather data:', error);
@@ -42,10 +42,10 @@ async function changeText(){
     weatherLineThree.textContent = `The rain sum will be ${rainSum} mm`;
     weatherLineFour.textContent = `The minimum precipitation hours will be ${precipitationHours} hours`;
 
-    console.log(weatherLineOne);
-    console.log(weatherLineTwo);
-    console.log(weatherLineThree);
-    console.log(weatherLineFour);
+    console.log(`Today's maxmimum temperature will be ${maxTempOne} degree's fehrenheit. The minimum will be ${minTempOne} fehrenheit`);
+    console.log(`The minimum will be ${minTempOne} fehrenheit`);
+    console.log(`The rain sum will be ${rainSum} mm`);
+    console.log(`The minimum precipitation hours will be ${precipitationHours} hours`);
 
 
 }
@@ -67,6 +67,3 @@ let button = document.getElementById("newWeatherBtn")
 
 
 button.addEventListener("click", changeText)
-
-
-
