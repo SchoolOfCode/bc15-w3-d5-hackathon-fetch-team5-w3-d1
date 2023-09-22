@@ -16,6 +16,8 @@ async function returnWeather() {
     }
 }
 
+let usableData;
+
 returnWeather().then(() => {
-    usableData = weatherData; // Log weatherData after the fetch operation is complete
+    usableData = weatherData; //Makes a variable to allow us to use the data
 });
