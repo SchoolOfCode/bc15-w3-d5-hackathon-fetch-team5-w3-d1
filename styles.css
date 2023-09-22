@@ -41,7 +41,7 @@ body {
 
   }
   
-  .newWeatherBtn {
+  button {
     display: block;
     align-content: center;
     margin: 10px auto;
