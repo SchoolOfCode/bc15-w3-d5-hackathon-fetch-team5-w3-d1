@@ -17,10 +17,17 @@ async function returnWeather() {
 async function changeText(){
     const newText = await returnWeather();
 
+    const todayDate = new Date();
+    date.textContent = todayDate;
+
+    if (newText.daily.temperature_2m_max[0] > 60){
+        let imageChange = document.getElementById("gif")
+        imageChange.src = "./images/sun.gif"
+    }
 
     let minTempOne = newText.daily.temperature_2m_min[0]
-    let rainSum = newText.daily.temperature_2m_min[0]
-    let precipitationHours = newText.daily.temperature_2m_min[0]
+    let rainSum = newText.daily.rain_sum[0]
+    let precipitationHours = newText.daily.precipitation_hours[0]
     let maxTempOne = newText.daily.temperature_2m_max[0]
 
     // Target where the weather is going
@@ -31,8 +38,14 @@ async function changeText(){
 
     weatherLineOne.textContent = `Today's maxmimum temperature will be ${maxTempOne} degree's fehrenheit. The minimum will be ${minTempOne} fehrenheit`;
     weatherLineTwo.textContent = `The minimum will be ${minTempOne} fehrenheit`;
-    weatherLineThree.textContent = `The rain sum will be ${rainSum} fehrenheit`;
-    weatherLineFour.textContent = `The minimum will be ${precipitationHours} fehrenheit`;
+    weatherLineThree.textContent = `The rain sum will be ${rainSum} mm`;
+    weatherLineFour.textContent = `The minimum precipitation hours will be ${precipitationHours} hours`;
+
+    console.log(weatherLineOne);
+    console.log(weatherLineTwo);
+    console.log(weatherLineThree);
+    console.log(weatherLineFour);
+
 
 }
 
