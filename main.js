@@ -25,6 +25,7 @@ async function changeText(){
         imageChange.src = "./images/sun.gif"
     }
 
+
     let minTempOne = newText.daily.temperature_2m_min[0]
     let rainSum = newText.daily.rain_sum[0]
     let precipitationHours = newText.daily.precipitation_hours[0]
