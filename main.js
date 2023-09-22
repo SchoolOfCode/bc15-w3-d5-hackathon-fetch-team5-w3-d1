@@ -17,27 +17,40 @@ async function returnWeather() {
 async function changeText(){
     const newText = await returnWeather();
 
-    let minTempOne = newText.daily.temperature_2m_min[0]
 
+    let minTempOne = newText.daily.temperature_2m_min[0]
+    let rainSum = newText.daily.temperature_2m_min[0]
+    let precipitationHours = newText.daily.temperature_2m_min[0]
     let maxTempOne = newText.daily.temperature_2m_max[0]
-    weatherDayOne.textContent = `Today's maxmimum temperature will be ${maxTempOne} degree's fehrenheit. The minimum will be ${minTempOne} fehrenheit`
+
+    // Target where the weather is going
+    let weatherLineOne = document.getElementById("weatherDayOne")
+    let weatherLineTwo = document.getElementById("weatherDayTwo")
+    let weatherLineThree = document.getElementById("weatherDayThree")
+    let weatherLineFour = document.getElementById("weatherDayFour")
+
+    weatherLineOne.textContent = `Today's maxmimum temperature will be ${maxTempOne} degree's fehrenheit. The minimum will be ${minTempOne} fehrenheit`;
+    weatherLineTwo.textContent = `The minimum will be ${minTempOne} fehrenheit`;
+    weatherLineThree.textContent = `The rain sum will be ${rainSum} fehrenheit`;
+    weatherLineFour.textContent = `The minimum will be ${precipitationHours} fehrenheit`;
+
 }
 
 // Create button event
 let button = document.getElementById("newWeatherBtn")
 
 
-// Target where the weather is going
-let weatherDayOne = document.getElementById("weatherDayOne")
-let weatherDayTwo = document.getElementById("weatherDayTwo")
-let weatherDayThree = document.getElementById("weatherDayThree")
-let weatherDayFour = document.getElementById("weatherDayFour")
-let weatherDayFive = document.getElementById("weatherDayFive")
-let weatherDaySix = document.getElementById("weatherDaySix")
-let weatherDaySeven = document.getElementById("weatherDaySeven")
+// let weatherDayOne = document.getElementById("weatherDayOne")
+// let weatherDayTwo = document.getElementById("weatherDayTwo")
+// let weatherDayThree = document.getElementById("weatherDayThree")
+// let weatherDayFour = document.getElementById("weatherDayFour")
+// let weatherDayFive = document.getElementById("weatherDayFive")
+// let weatherDaySix = document.getElementById("weatherDaySix")
+// let weatherDaySeven = document.getElementById("weatherDaySeven")
 // console.log(weatherText)
 
 // Trigger event when button is clicked
+
 
 button.addEventListener("click", changeText)
 
