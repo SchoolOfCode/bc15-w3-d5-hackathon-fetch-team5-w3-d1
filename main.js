@@ -24,10 +24,10 @@ async function changeText(){
     let maxTempOne = newText.daily.temperature_2m_max[0]
 
     // Target where the weather is going
-    let weatherLineOne = document.getElementById("weatherDayOne")
-    let weatherLineTwo = document.getElementById("weatherDayTwo")
-    let weatherLineThree = document.getElementById("weatherDayThree")
-    let weatherLineFour = document.getElementById("weatherDayFour")
+    let weatherLineOne = document.getElementById("weatherLineOne")
+    let weatherLineTwo = document.getElementById("weatherLineTwo")
+    let weatherLineThree = document.getElementById("weatherLineThree")
+    let weatherLineFour = document.getElementById("weatherLineFour")
 
     weatherLineOne.textContent = `Today's maxmimum temperature will be ${maxTempOne} degree's fehrenheit. The minimum will be ${minTempOne} fehrenheit`;
     weatherLineTwo.textContent = `The minimum will be ${minTempOne} fehrenheit`;
