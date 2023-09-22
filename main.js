@@ -10,7 +10,7 @@ async function returnWeather() {
         }
 
         const data = await response.json();
-        weatherData = data;
+        return data;
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
@@ -18,6 +18,10 @@ async function returnWeather() {
 
 let usableData;
 
-returnWeather().then(() => {
-    usableData = weatherData; //Makes a variable to allow us to use the data
-});
+function thenHandler(d) {
+    usableData = d;
+    console.log(d);
+}
+
+returnWeather().then(thenHandler);
+
